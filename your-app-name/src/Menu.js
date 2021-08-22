@@ -12,7 +12,6 @@ function Menu({menuItems}){
         price={item.price}
         />
     ))
-
     return(
         <>
         {menuArray}

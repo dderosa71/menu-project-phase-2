@@ -4,6 +4,8 @@ import Menu from "./Menu.js"
 import React, { useState, useEffect } from 'react';
 import Header from "./Headers.js"
 import AddNewItem from './AddNewItem';
+// import { BrowserRouter, Route } from "react-router-dom";
+
 
 
 
@@ -11,15 +13,15 @@ function App() {
 
   const jsonURL = "http://localhost:3000/dinner"
 
-  useEffect(()=> 
-  fetch(jsonURL)
-  .then(resp => resp.json())
-  .then(json=> setMenuItems(json)),
-  [])
+  useEffect(() =>
+    fetch(jsonURL)
+      .then(resp => resp.json())
+      .then(json => setMenuItems(json)),
+    [])
 
   const [menuItems, setMenuItems] = useState([])
-  const[newItemScreen, setNewItemScreen] = useState(false)
-
+  const [newItemScreen, setNewItemScreen] = useState(false)
+  const displayMe = newItemScreen ? "hidden" : "shown"
   return (
     // <div className="App">
     //   <header className="App-header">
@@ -38,9 +40,20 @@ function App() {
     //   </header>
     // </div>
     <>
-    <Header setMenuItems={setMenuItems} setNewItemScreen={setNewItemScreen} jsonURL={jsonURL}/>
-    <Menu menuItems={menuItems}/>
-    <AddNewItem/>
+
+    {/* <BrowserRouter>
+    <Route path="/"> */}
+     <div className={displayMe}>
+        <Header  setNewItemScreen={setNewItemScreen}  />
+        <Menu menuItems={menuItems} />
+      </div>
+    {/* </Route>
+  </BrowserRouter>, */}
+     
+      <div className={displayMe} >
+        <AddNewItem setMenuItems={setMenuItems} jsonURL={jsonURL}/>
+      </div>
+
     </>
   );
 }
