@@ -12,9 +12,10 @@ function App() {
   useEffect(()=> 
   fetch(jsonURL)
   .then(resp => resp.json())
-  .then(json=> console.log(json)),
+  .then(json=> setMenuItems(json)),
   [])
-  
+
+  const [menuItems, setMenuItems] = useState([])
 
   return (
     // <div className="App">
@@ -33,7 +34,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Menu />
+    <Menu menuItems={menuItems}/>
   );
 }
 
