@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Menu from "./Menu.js"
 import React, { useState, useEffect } from 'react';
+import Header from "./Headers.js"
 
 
 
@@ -16,6 +17,7 @@ function App() {
   [])
 
   const [menuItems, setMenuItems] = useState([])
+  const[newItemScreen, setNewItemScreen] = useState(false)
 
   return (
     // <div className="App">
@@ -34,7 +36,10 @@ function App() {
     //     </a>
     //   </header>
     // </div>
+    <>
+    <Header setMenuItems={setMenuItems} setNewItemScreen={setNewItemScreen} jsonURL={jsonURL}/>
     <Menu menuItems={menuItems}/>
+    </>
   );
 }
 
