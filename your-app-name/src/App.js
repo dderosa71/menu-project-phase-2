@@ -45,7 +45,7 @@ function App() {
     <Route path="/"> */}
      <div className={displayMe}>
         <Header  setNewItemScreen={setNewItemScreen}  />
-        <Menu menuItems={menuItems} />
+        <Menu menuItems={menuItems} jsonURL={jsonURL} setMenuItems={setMenuItems} />
       </div>
     {/* </Route>
   </BrowserRouter>, */}
