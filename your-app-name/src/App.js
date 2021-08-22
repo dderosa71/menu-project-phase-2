@@ -3,6 +3,7 @@ import './App.css';
 import Menu from "./Menu.js"
 import React, { useState, useEffect } from 'react';
 import Header from "./Headers.js"
+import AddNewItem from './AddNewItem';
 
 
 
@@ -39,6 +40,7 @@ function App() {
     <>
     <Header setMenuItems={setMenuItems} setNewItemScreen={setNewItemScreen} jsonURL={jsonURL}/>
     <Menu menuItems={menuItems}/>
+    <AddNewItem/>
     </>
   );
 }
