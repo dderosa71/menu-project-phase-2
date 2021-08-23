@@ -4,6 +4,7 @@ import Menu from "./Menu.js"
 import React, { useState, useEffect } from 'react';
 import Header from "./Headers.js"
 import AddNewItem from './AddNewItem';
+import CustomerPage from "./CustomerPage.js"
 // import { BrowserRouter, Route } from "react-router-dom";
 
 
@@ -52,6 +53,7 @@ function App() {
      
       <div className={displayMe} >
         <AddNewItem setMenuItems={setMenuItems} jsonURL={jsonURL}/>
+        <CustomerPage menuItems={menuItems}/>
       </div>
 
     </>

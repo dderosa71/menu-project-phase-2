@@ -1,4 +1,5 @@
 import React from "react"
+import Button from 'react-bootstrap/Button'; 
 
 function MenuItem({name, description, price, id, jsonURL, setMenuItems}){
     function handleDelete(){
@@ -12,7 +13,7 @@ function MenuItem({name, description, price, id, jsonURL, setMenuItems}){
             <h3>{name}</h3>
             <p>{description}</p>
             <p>{price}</p>
-            <button onClick={handleDelete}>Delete</button>
+            <Button variant="danger" onClick={handleDelete}>Delete</Button>
         </div>
     )
 }
