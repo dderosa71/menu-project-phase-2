@@ -15,7 +15,8 @@ function CustomerPage( {menuItems}){
             <h1>DeRosa's Italian Restaurant</h1>
             <h2>Welcome! It is our pleasure to serve your</h2>
             <h3>Tonight's Menu</h3>
-            {tonightsMenu}
+            <dl>{tonightsMenu}</dl>
+            
         </div>
     )
 }
